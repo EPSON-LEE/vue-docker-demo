@@ -1,5 +1,7 @@
 FROM node:8.9.4
 
+RUN sed -i '/jessie-updates/d' /etc/apt/sources.list  # Now archived
+
 # install simple http server for serving static content
 # RUN npm install -g http-server
 # 安装nginx
