@@ -23,5 +23,4 @@ RUN npm install \
     && cp -r dist/* /var/www/html\
     && rm -rf /app
 
-
 CMD [ "nginx","g","dameon off;"]
