@@ -1,6 +1,11 @@
 FROM node:8.9.4
 
-RUN sed -i '/jessie-updates/d' /etc/apt/sources.list  # Now archived
+#更新apt-get源 使用163的源
+RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak && \
+    echo "deb http://mirrors.163.com/debian/ jessie main non-free contrib" >/etc/apt/sources.list && \
+    echo "deb http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib" >>/etc/apt/sources.list && \
+    echo "deb-src http://mirrors.163.com/debian/ jessie main non-free contrib" >>/etc/apt/sources.list && \
+    echo "deb-src http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib" >>/etc/apt/sources.list
 
 # install simple http server for serving static content
 # RUN npm install -g http-server
