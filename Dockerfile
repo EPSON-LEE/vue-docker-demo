@@ -3,8 +3,7 @@ FROM node:8.9.4
 # install simple http server for serving static content
 # RUN npm install -g http-server
 # 安装nginx
-RUN apt-get update \
-    && apt-get install -y nginx
+RUN apt-get update && apt-get install -y nginx
 
 # make the 'app' folder the current working directory
 # 指定工作目录
