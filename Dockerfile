@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:8.9.4
 
 # install simple http server for serving static content
 # RUN npm install -g http-server
